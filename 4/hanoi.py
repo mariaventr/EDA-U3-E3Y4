@@ -4,7 +4,7 @@ class Pila:
     def __init__(self, dim):
         self.__tope = -1
         self.__dim = dim
-        self.__arr = np.empty(dim, dtype=int)
+        self.__arr = np.empty(dim, dtype=object)
 
     def lleno(self):
         return self.__tope == self.__dim - 1
@@ -22,6 +22,7 @@ class Pila:
     def suprimir(self):
         if self.vacio():
             print("La pila está vacía. No se puede suprimir.")
+            return None
         else:
             objeto = self.__arr[self.__tope]
             self.__arr[self.__tope] = None
@@ -67,3 +68,4 @@ print("\nEstado final de las torres:")
 print("Torre 1:", torre1)
 print("Torre 2:", torre2)
 print("Torre 3:", torre3)
+    
